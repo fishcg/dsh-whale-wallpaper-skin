@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.linxin666.org/dsh-skin/v2.json",
+  "skinManifestVersion": 2,
+  "id": "whale-wallpaper",
+  "name": "鲸鱼娘 · 仅壁纸",
+  "nameEn": "Whale Girl · Wallpaper Only",
+  "version": "1.0.0",
+  "author": "stushansusu",
+  "license": "CC BY-NC-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "皮肤工程（skin.css / patches.css 的全部全息化规则、调色板与几何约定）由 stushansusu 原创。背景视频：源片由作者提供；构建时代码用 bake-ff-loop.py 裁掉上下各 46px 黑边、降到 1664 宽 / CRF 28，并把尾部 1.2s 与头部 1.2s 交叉淡入成无缝循环（25.46s / 611 帧 / 6.63 MB）。",
+  "tagline": "只保留背景视频，界面走 DSH 默认深色主题",
+  "description": "鲸鱼娘背景视频（启动播放一次、停在最后一帧、随后压暗），其余排版/字体/配色全部交回 DSH 默认深色主题。",
+  "tags": [
+    "cyberpunk",
+    "sci-fi",
+    "the-unreached",
+    "anime",
+    "hologram",
+    "hud",
+    "cold-blue",
+    "electric-blue",
+    "cyan",
+    "data-rain",
+    "whale-girl",
+    "video-background",
+    "dark",
+    "dark-only"
+  ],
+  "accent": "#3A7BFF",
+  "order": 49,
+  "preview": {
+    "light": "preview/light.jpg",
+    "dark": "preview/dark.jpg"
+  },
+  "contributes": {
+    "stylesheet": "skin.css",
+    "patches": "patches.css",
+    "backgroundMedia": {
+      "light": {
+        "type": "video",
+        "src": "assets/whale-fantasy-loop.mp4",
+        "scrim": "linear-gradient(180deg, rgba(5,7,13,0) 0%, rgba(5,7,13,0) 86%, rgba(5,7,13,0.16) 96%, rgba(5,7,13,0.22) 100%)"
+      },
+      "dark": {
+        "type": "video",
+        "src": "assets/whale-fantasy-loop.mp4",
+        "scrim": "linear-gradient(180deg, rgba(5,7,13,0) 0%, rgba(5,7,13,0) 86%, rgba(5,7,13,0.16) 96%, rgba(5,7,13,0.22) 100%)"
+      }
+    }
+  }
+}

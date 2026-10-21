@@ -1,0 +1,119 @@
+/* 仅壁纸：把背景层从 root 背景下面抬出来，并给启动播放结束后的可读性压暗。
+   其余界面一律使用 DSH 默认深色主题，不做排版/字体/配色覆盖。 */
+
+@keyframes ff-lift {
+  from { z-index: -2; }
+  to { z-index: 1; }
+}
+body [data-dsh-skin-layer='background'] {
+  animation: ff-lift 1ms linear 700ms forwards;
+  will-change: auto !important;
+}
+
+body > #root {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}
+
+/* 11s 定时：视频停住后换成 11s 那一帧的静态图，同时淡入背景纱与会话区暗底 */
+@keyframes wp-still-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wp-hide-video { to { visibility: hidden; } }
+@keyframes wp-veil-in { to { background-color: rgba(0, 0, 0, 0.55); } }
+@keyframes wp-scrim-in { to { background-color: rgba(21, 21, 23, 0.42); } }
+
+body [data-dsh-skin-layer='background']::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/whale-wallpaper-11s.jpg") center / cover no-repeat;
+  opacity: 0;
+  animation: wp-still-in 0.6s ease 11s forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+body [data-dsh-skin-layer='background'] video {
+  animation: wp-hide-video 0.01s linear 11s forwards;
+}
+body [data-dsh-skin-layer='background']::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 2;
+  pointer-events: none;
+  animation: wp-veil-in 1.2s ease 11s forwards;
+}
+[data-conversation-scroll] {
+  animation: wp-scrim-in 1.2s ease 11s forwards;
+}
+
+/* 输入卡：毛玻璃 —— 整张卡（输入区 + 下方选项行）一起半透明+模糊 */
+body [data-composer-card] {
+  background-color: rgba(20, 22, 28, 0.6) !important;
+  backdrop-filter: blur(22px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.2) !important;
+}
+
+
+/* 左侧菜单栏：与输入卡同款毛玻璃 */
+body [class*='sidebarCol'] {
+  background: rgba(20, 22, 28, 0.28) !important;
+  backdrop-filter: blur(20px) saturate(1.15) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.15) !important;
+}
+
+/* 右侧弹出的面板：毛玻璃，比输入卡稍淡 */
+body [data-sidebar-right-panel][data-sidebar-right-open]:has([data-sidebar-right-tab]) {
+  background-color: rgba(20, 22, 28, 0.45) !important;
+  backdrop-filter: blur(18px) saturate(1.15) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.15) !important;
+}
+
+
+/* 代码块：与输入卡同款毛玻璃 */
+body [data-chat-flow] div:has(> [data-code-block-banner]) {
+  background: rgba(20, 22, 28, 0.46) !important;
+  backdrop-filter: blur(30px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(1.1) !important;
+}
+
+/* 代码块内部表面透明，让外层的毛玻璃透出来 */
+body [data-chat-flow] div:has(> [data-code-block-banner]) pre,
+body [data-chat-flow] div:has(> [data-code-block-banner]) code {
+  background: transparent !important;
+}
+body [data-chat-flow] div:has(> [data-code-block-banner]) {
+  --dsw-alias-markdown-code-block: transparent;
+}
+
+/* 代码块内部所有子层透明，只留外层毛玻璃 */
+body [data-chat-flow] div:has(> [data-code-block-banner]) * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 代码块伪元素也不画底 */
+body [data-chat-flow] div:has(> [data-code-block-banner])::before,
+body [data-chat-flow] div:has(> [data-code-block-banner])::after {
+  background: transparent !important;
+}
+
+/* AI 回复气泡：给 assistant-step 行加一层深色圆角底 */
+/* AI 回复气泡：给 assistant 轮加一层深色圆角底 */
+body [data-chat-flow-kind='assistant-step'] {
+  background-color: rgba(20, 22, 28, 0.5) !important;
+  border-radius: 12px !important;
+}
+
+/* 设置弹窗背景：使用指定插画 + 深色遮罩保证可读性 */
+dialog,
+[role='dialog'] {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background-image: linear-gradient(rgba(10, 12, 18, 0.82), rgba(10, 12, 18, 0.82)), url("assets/settings-bg.webp") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+}
