@@ -1,0 +1,10 @@
+{
+  "name": "dsh-whale-wallpaper-skin",
+  "version": "1.0.0",
+  "description": "鲸鱼娘·仅壁纸：DSH 深色壁纸皮肤（11s 开场、毛玻璃、设置弹窗插画背景）",
+  "keywords": ["dsh", "dsh-skin", "deepseek-harness", "wallpaper", "glassmorphism"],
+  "license": "CC-BY-NC-SA-4.0",
+  "files": ["skin.json", "skin.css", "patches.css", "preview", "docs", "install.sh", "Install.command", "README.md", "LICENSE"],
+  "repository": { "type": "git", "url": "git+https://github.com/fishcg/dsh-whale-wallpaper-skin.git" },
+  "homepage": "https://github.com/fishcg/dsh-whale-wallpaper-skin#readme"
+}
