@@ -12,10 +12,9 @@
 
 ## 开场动画
 
-![开场动画](docs/startup.gif)
+![DSH 启动开场动画](docs/startup.gif)
 
-完整背景视频（25.46s 无缝循环，6.3 MB）：
-<https://acgay.oss-cn-hangzhou.aliyuncs.com/dsh-skins/whale-wallpaper/assets/whale-fantasy-loop.mp4>
+完整背景视频
 
 ## 特性
 
