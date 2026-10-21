@@ -47,11 +47,7 @@ npm i dsh-whale-wallpaper-skin   # 或 npm pack dsh-whale-wallpaper-skin
 
 装完在 **设置 → 皮肤 → 鲸鱼娘 · 仅壁纸 → 应用**。卸载：删掉皮肤目录，再切回「官方默认」。
 
-| 资源 | 大小 | 地址 |
-| --- | --- | --- |
-| 背景视频 | 6.3 MB | https://acgay.oss-cn-hangzhou.aliyuncs.com/dsh-skins/whale-wallpaper/assets/whale-fantasy-loop.mp4 |
-| 11s 定格图 | 212 KB | https://acgay.oss-cn-hangzhou.aliyuncs.com/dsh-skins/whale-wallpaper/assets/whale-wallpaper-11s.jpg |
-| 设置弹窗背景 | 71 KB | https://acgay.oss-cn-hangzhou.aliyuncs.com/dsh-skins/whale-wallpaper/assets/settings-bg.webp |
+
 
 ## 调整
 
