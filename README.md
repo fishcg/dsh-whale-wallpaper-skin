@@ -1,5 +1,9 @@
 # 鲸鱼娘 · 仅壁纸（DSH 皮肤）
 
+[![GitHub](https://img.shields.io/badge/GitHub-fishcg%2Fdsh--whale--wallpaper--skin-181717?logo=github)](https://github.com/fishcg/dsh-whale-wallpaper-skin)
+[![npm](https://img.shields.io/npm/v/dsh-whale-wallpaper-skin?logo=npm&color=cb3837)](https://www.npmjs.com/package/dsh-whale-wallpaper-skin)
+[![license](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)](LICENSE)
+
 只换壁纸、不动排版的 DSH 深色皮肤。开场视频播放 11 秒后定格并压暗，输入卡 / 左侧栏 / 代码块 / 右侧面板是毛玻璃，设置弹窗用一张半透明插画做背景；其余字体、字号、文字颜色全部沿用 DSH 默认深色主题。
 
 ![新对话](docs/new-chat.png)
@@ -30,7 +34,13 @@
 bash install.sh
 ```
 
-或双击 `Install.command`。脚本会：
+或双击 `Install.command`。也可以直接装 npm 包拿到全部皮肤文件：
+
+```bash
+npm i dsh-whale-wallpaper-skin   # 或 npm pack dsh-whale-wallpaper-skin
+```
+
+脚本会：
 
 1. 找到皮肤目录：`${DSH_SKINS_HOME:-${DSH_SKINS_DIR:-${DSH_HOME:-~/.dsh}/skins}}`
 2. 从 OSS 下载视频与两张图（仓库里不含大文件）
